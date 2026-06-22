@@ -1,0 +1,2246 @@
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adinaan Amme Mohammed | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for beautiful icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                            darkBg: '#0b0f19',
+                            darkCard: '#151c2c'
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
+    <style>
+        /* Smooth Custom Transitions */
+        .glass-panel {
+            background: rgba(21, 28, 44, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
+        .ai-pulse {
+            animation: pulse-ring 2.5s infinite ease-in-out;
+        }
+        /* Typing indicator styling */
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #a5b4fc;
+            border-radius: 50%;
+            display: inline-block;
+
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+
+        /* Soundwave animation for the voice chatbot response */
+        .soundwave-bar {
+            width: 3px;
+            height: 15px;
+            background-color: #818cf8;
+            border-radius: 10px;
+            display: inline-block;
+            animation: bounce-wave 1s infinite alternate;
+        }
+        .soundwave-bar:nth-child(2) { animation-delay: 0.15s; }
+        .soundwave-bar:nth-child(3) { animation-delay: 0.3s; }
+        .soundwave-bar:nth-child(4) { animation-delay: 0.45s; }
+        .soundwave-bar:nth-child(5) { animation-delay: 0.6s; }
+
+        @keyframes bounce-wave {
+            0% { height: 4px; }
+            100% { height: 24px; }
+        }
+    </style>
+</head>
+<body class="bg-brand-darkBg text-gray-100 font-sans min-h-screen selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 w-full z-50 glass-panel transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#home" class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+
+                    <span class="text-white font-extrabold text-lg">AA</span>
+                </div>
+                <span class="text-xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Adinaan Amme</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-4">
+                <a href="#home" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all">Home</a>
+                <a href="#about" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all">About</a>
+                <a href="#skills" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all">Skills</a>
+                <a href="#services" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all">Services</a>
+                <a href="#projects" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all">Projects</a>
+                
+                <a href="#experience" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all">Timeline</a>
+                <a href="#testimonials" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all">Testimonials</a>
+                <a href="#contact" class="ml-4 px-4 py-2 rounded-xl bg-brand-500 text-white text-sm font-semibold hover:bg-brand-600 shadow-lg shadow-indigo-500/20 active:scale-95 transition-all">Contact</a>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu panel -->
+
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-indigo-600/20 transition">Home</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-indigo-600/20 transition">About</a>
+                <a href="#skills" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-indigo-600/20 transition">Skills</a>
+                <a href="#services" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-indigo-600/20 transition">Services</a>
+                <a href="#projects" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-indigo-600/20 transition">Projects</a>
+               
+                <a href="#experience" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-indigo-600/20 transition">Timeline</a>
+                <a href="#testimonials" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-indigo-600/20 transition">Testimonials</a>
+                <a href="#contact" class="mobile-nav-link block w-full text-center px-3 py-2.5 mt-2 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:py-40 relative overflow-hidden flex items-center min-h-screen">
+        <!-- Abstract glowing backgrounds -->
+        <div class="absolute top-1/4 left-1/10 w-72 h-72 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="absolute bottom-1/4 right-1/10 w-96 h-96 bg-purple-600/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1.5 rounded-full text-indigo-400 text-xs md:text-sm font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Jimma University Student</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-none text-white">
+                        Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-purple-500 text-glow">Adinaan Amme</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium">
+                        Information Science
+                    </p>
+                    
+                    <p class="text-sm sm:text-base text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Currently structuring digital architectures, crafting beautiful interactive media, and preparing for an impactful internship to revolutionize real-world problems.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#projects" class="w-full sm:w-auto px-8 py-4 text-center rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold shadow-lg shadow-indigo-600/35 transition-all active:scale-95 flex items-center justify-center gap-2">
+                            <span>Explore My Work</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 text-center rounded-xl bg-gray-800/60 hover:bg-gray-800 border border-gray-700 text-gray-200 hover:text-white font-bold transition-all active:scale-95 flex items-center justify-center gap-2">
+                            <span>Get in Touch</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </a>
+                    </div>
+
+                    <!-- Quick stats / links -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gray-800 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white">3rd</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest font-medium">Year Student</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white">3+</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest font-medium">Built Projects</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-indigo-400">JIT</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest font-medium">Campus</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Content (Stunning Interactive Hub Visual) -->
+                <div class="lg:col-span-5 flex justify-center items-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                        <!-- Orbiting Elements animation style -->
+                        <div class="absolute inset-0 rounded-full border border-dashed border-gray-700/60 animate-[spin_40s_linear_infinite]"></div>
+                        <div class="absolute inset-4 rounded-full border border-indigo-500/20 animate-[spin_20s_linear_infinite_reverse]"></div>
+                        
+
+                        <!-- Main central profile shield -->
+                        <div class="absolute inset-10 rounded-3xl bg-gradient-to-tr from-indigo-900/80 to-purple-900/80 border border-indigo-500/30 flex flex-col items-center justify-center text-center p-6 shadow-2xl shadow-indigo-500/15">
+                            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white text-3xl sm:text-4xl font-extrabold mb-4 shadow-xl">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white">Adinaan Amme</h3>
+                            <p class="text-xs sm:text-sm text-indigo-300 font-medium">Ready for Internship</p>
+                            <div class="flex space-x-2 mt-3">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">Available now</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Micro Badges -->
+                        <div class="absolute top-0 right-10 p-3 bg-indigo-950/90 border border-indigo-500/30 rounded-2xl shadow-lg animate-[bounce_4s_infinite_1s]">
+                            <i class="fa-brands fa-js text-yellow-400 text-xl"></i>
+                        </div>
+                        <div class="absolute bottom-8 left-2 p-3 bg-purple-950/90 border border-purple-500/30 rounded-2xl shadow-lg animate-[bounce_5s_infinite]">
+                            <i class="fa-brands fa-python text-sky-400 text-xl"></i>
+                        </div>
+                        <div class="absolute bottom-10 right-8 p-3 bg-emerald-950/90 border border-emerald-500/30 rounded-2xl shadow-lg animate-[bounce_4.5s_infinite_0.5s]">
+                            <i class="fa-solid fa-database text-emerald-400 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-brand-darkCard/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm text-indigo-400 font-bold tracking-widest uppercase mb-2">My Background</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">About Adinaan Amme</h3>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <!-- Academic Information -->
+                <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+                    <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-gray-800/80 shadow-xl space-y-4">
+                        <div class="flex items-center space-x-4 mb-2">
+                            <div class="p-3 bg-indigo-500/10 text-indigo-400 rounded-xl text-xl">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Academic Status</h4>
+                                <p class="text-sm text-gray-400">Jimma University (JIT)</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                            I am a third-year student at **Jimma University, Jimma Institute of Technology (JIT) Campus**, Bachelors Degree(B.Sc.) Information Science. My academic path has equipped me with a profound understanding of systems analysis, programming, and user experiences.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                            Currently, I am actively seeking and preparing to start an **internship program** where I can apply my analytical capabilities, software development skills, and creative media background to drive value for team initiatives.
+                        </p>
+
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="glass-panel p-5 rounded-2xl border border-gray-800">
+                            <h5 class="font-bold text-white mb-2"><i class="fa-solid fa-map-pin text-rose-500 mr-2"></i>Location</h5>
+                            <p class="text-sm text-gray-400">Harar, Oromia, Ethiopia</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-2xl border border-gray-800">
+                            <h5 class="font-bold text-white mb-2"><i class="fa-solid fa-envelope text-indigo-400 mr-2"></i>Education Focus</h5>
+                            <p class="text-sm text-gray-400">Data Architecture &amp; Web Dev</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast Facts Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-gradient-to-b from-indigo-900/30 to-brand-darkCard p-6 sm:p-8 rounded-2xl border border-indigo-500/20 shadow-xl h-full flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-bullseye text-pink-500 mr-2"></i>My Vision &amp; Goals</h4>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                Bridging the gap between raw information architecture and functional, eye-catching visual execution. I don't just organize logical backend databases; I also build the engaging frontends that process them.
+                            </p>
+                            
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3 text-sm">
+                                    <i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i>
+                                    <span class="text-gray-300"><strong class="text-white">Full-Stack Capability:</strong> Front and backend proficiency.</span>
+                                </li>
+                                <li class="flex items-start space-x-3 text-sm">
+                                    <i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i>
+                                    <span class="text-gray-300"><strong class="text-
+
+white">Design Integrity:</strong> Highly experienced with Photoshop and digital layouts.</span>
+                                </li>
+                                <li class="flex items-start space-x-3 text-sm">
+                                    <i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i>
+                                    <span class="text-gray-300"><strong class="text-white">Problem Solver:</strong> Ready to deliver value instantly as an intern.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pt-6 mt-6 border-t border-gray-800">
+                            <a href="#contact" class="inline-flex items-center text-sm font-semibold text-indigo-400 hover:text-indigo-300">
+                                Let's collaborate
+                                <i class="fa-solid fa-arrow-right ml-2 animate-[bounce_1.5s_infinite]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-0 w-80 h-80 bg-pink-600/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm text-indigo-400 font-bold tracking-widest uppercase mb-2">My Toolkit</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Skills &amp; Expertise</h3>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Coding & Tech Skills Card -->
+                <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-gray-800 shadow-xl">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 bg-indigo-500/10 text-indigo-400 rounded-xl text-xl">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Technical Coding Skills</h4>
+                    </div>
+
+                    <div class="space-y-5">
+                        <!-- Skill Progress Bar -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-300">HTML &amp; CSS</span>
+                                <span class="text-sm font-semibold text-indigo-400">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-indigo-500 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-300">JavaScript</span>
+                                <span class="text-sm font-semibold text-indigo-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-indigo-500 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-300">Python &amp; C++</span>
+                                <span class="text-sm font-semibold text-indigo-400">65%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-indigo-500 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-300">C# &amp; PHP</span>
+                                <span class="text-sm font-semibold text-indigo-400">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-indigo-500 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-300">Database (SQL / relational)</span>
+                                <span class="text-sm font-semibold text-indigo-400">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-indigo-500 h-2.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Individual Creative Skills Card -->
+                <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-gray-800 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="p-3 bg-pink-500/10 text-pink-400 rounded-xl text-xl">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white">Creative &amp; Design Skills</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6">
+                            Beyond conventional coding, I possess sharp visual design capabilities. This enables me to produce high-impact, user-friendly templates, dynamic motion graphics, and engaging branding guidelines.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <!-- Creative Skill Card -->
+                            <div class="p-4 bg-gray-800/40 border border-gray-800 rounded-xl text-center hover:border-pink-500/35 transition duration-300">
+                                <i class="fa-solid fa-clapperboard text-pink-500 text-2xl mb-2"></i>
+                                <h5 class="text-sm font-bold text-white">Video Editing</h5>
+                                <p class="text-xs text-gray-400 mt-1">Premiere, CapCut, Motion FX</p>
+                            </div>
+                            <!-- Creative Skill Card -->
+                            <div class="p-4 bg-gray-800/40 border border-gray-800 rounded-xl text-center hover:border-pink-500/35 transition duration-300">
+                                <i class="fa-solid fa-bezier-curve text-indigo-400 text-2xl mb-2"></i>
+                                <h5 class="text-sm font-bold text-white">Graphic Design</h5>
+                                <p class="text-xs text-gray-400 mt-1">Vector illustrations, Branding</p>
+                            </div>
+                            <!-- Creative Skill Card -->
+                            <div class="p-4 bg-gray-800/40 border border-gray-800 rounded-xl text-center hover:border-pink-500/35 transition duration-300">
+                                <i class="fa-solid fa-image text-emerald-400 text-2xl mb-2"></i>
+
+                                <h5 class="text-sm font-bold text-white">Photoshop</h5>
+                                <p class="text-xs text-gray-400 mt-1">UI kits, Compositing, Art</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-gray-800/50 mt-6 bg-gradient-to-r from-indigo-500/10 to-transparent p-4 rounded-xl">
+                        <p class="text-xs text-gray-300 italic">
+                            "Having dual knowledge in creative visual design and computer science algorithms ensures UI/UX is built with extreme high-fidelity and exact logic implementation."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-brand-darkCard/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm text-indigo-400 font-bold tracking-widest uppercase mb-2">What I Offer</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Services</h3>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-indigo-500/30 hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+
+                        <h4 class="text-lg font-bold text-white mb-2">Web Application Dev</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Crafting clean, responsive websites using HTML, CSS, JavaScript, PHP, and modern utility frameworks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-pink-500/30 hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Database Systems</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Designing and maintaining rational query models, database tables, views, and schemas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-emerald-500/30 hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Creative Design</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Branding templates, high fidelity custom digital art, UI design layout with Photoshop &amp; vector shapes.
+
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-purple-500/30 hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-photo-film"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Video Production</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Professional post-production cuts, sound engineering, custom subtitles, and promotional editing styles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with Live Interactive Apps inside! -->
+    <section id="projects" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs sm:text-sm text-indigo-400 font-bold tracking-widest uppercase mb-2">Interactive Showcase</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">My Projects </h3>
+                <p class="text-sm text-gray-400 mt-2">I build systems that actually work. Switch between my three main simulated systems and test them, !</p>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Tab Selectors for the Interactive projects -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-10 max-
+
+w-3xl mx-auto bg-gray-900 p-2 rounded-2xl border border-gray-800">
+                <button onclick="switchProject('hotel')" id="btn-hotel" class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-indigo-600 text-white">
+                    <i class="fa-solid fa-hotel mr-2"></i>Hotel Booking
+                </button>
+                <button onclick="switchProject('banking')" id="btn-banking" class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-piggy-bank mr-2"></i>Online Banking
+                </button>
+                <button onclick="switchProject('employee')" id="btn-employee" class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-users-gear mr-2"></i>Employee Org
+                </button>
+                
+            </div>
+
+            <!-- Toast alert message container (instead of default alerts) -->
+            <div id="toast-container" class="fixed bottom-5 right-5 z-50 transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
+                <div class="bg-indigo-600 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center space-x-3 border border-indigo-500/30">
+                    <span id="toast-icon" class="text-lg"><i class="fa-solid fa-circle-info"></i></span>
+                    <span id="toast-text" class="text-sm font-semibold">Success message!</span>
+                </div>
+            </div>
+
+            <!-- Project Contents -->
+            <div id="project-container" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+
+                <!-- Project 1: Hotel Booking System Details & Live Interactive Application -->
+                <div id="proj-hotel" class="project-view lg:col-span-12 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <div class="lg:col-span-5 flex flex-col justify-between glass-panel p-6 sm:p-8 rounded-3xl border border-gray-800">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full"><i class="fa-solid fa-hotel mr-1"></i> System Demo 1</span>
+                            <h3 class="text-2xl font-black text-white mt-4">Hotel Booking System</h3>
+                            <p class="text-sm text-gray-400 mt-2 leading-relaxed">
+                                A web platform where users can select hotel room categories, configure their stay period, choose premium amenities, and execute reservations with automated invoice calculations.
+                            </p>
+                            <h4 class="font-bold text-gray-300 mt-6 text-sm">Key System Features Built:</h4>
+                            <ul class="space-y-2 mt-2 text-xs text-gray-400">
+                                <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Dynamic room rate calculation</li>
+                                <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Tax and luxury surcharge adjustments</li>
+                                <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Booking receipts log &amp; active status tracking</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 border-t border-gray-800/60 mt-6">
+                            <span class="text-xs text-indigo-300 font-mono">Built with HTML5, CSS3, &amp; Vanilla JavaScript State</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Application Area -->
+                    <div class="lg:col-span-7 bg-brand-darkCard border border-gray-800 p-6 rounded-3xl flex flex-col justify-between shadow-2xl relative">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
+
+                                <h4 class="font-bold text-white flex items-center"><i class="fa-solid fa-terminal mr-2 text-indigo-400"></i>Booking Simulator</h4>
+                                <span class="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Operational</span>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs text-gray-400 uppercase tracking-widest font-bold mb-2">Room Class</label>
+                                        <select id="hotel-room-type" class="w-full bg-gray-900 border border-gray-800 hover:border-gray-700 text-gray-200 text-sm px-4 py-3 rounded-xl focus:outline-none focus:border-indigo-500">
+                                            <option value="Standard Deluxe:80">Standard Deluxe ($80/night)</option>
+                                            <option value="Executive Suite:150">Executive Suite ($150/night)</option>
+                                            <option value="Presidential Penthouse:320">Presidential Penthouse ($320/night)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-gray-400 uppercase tracking-widest font-bold mb-2">Stays Length</label>
+                                        <select id="hotel-nights" class="w-full bg-gray-900 border border-gray-800 hover:border-gray-700 text-gray-200 text-sm px-4 py-3 rounded-xl focus:outline-none focus:border-indigo-500">
+                                            <option value="1">1 Night</option>
+                                            <option value="2">2 Nights</option>
+                                            <option value="3">3 Nights</option>
+                                            <option value="5">5 Nights</option>
+                                            <option value="7">7 Nights (Weekly Disc.)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs text-gray-400 uppercase tracking-widest font-bold mb-2">Additional Services</label>
+
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2 bg-gray-900 border border-gray-800/80 p-3 rounded-xl cursor-pointer hover:border-indigo-500/20">
+                                            <input type="checkbox" id="hotel-wifi" class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0">
+                                            <span class="text-xs text-gray-300">Premium Wifi (+$10)</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 bg-gray-900 border border-gray-800/80 p-3 rounded-xl cursor-pointer hover:border-indigo-500/20">
+                                            <input type="checkbox" id="hotel-spa" class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0">
+                                            <span class="text-xs text-gray-300">Spa Treatment (+$45)</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button onclick="bookHotelRoom()" class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl active:scale-95 transition-all text-sm flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                    <span>Reserve Room </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Active Log Invoice output -->
+                        <div class="mt-6 pt-4 border-t border-gray-800">
+                            <h5 class="text-xs font-extrabold uppercase tracking-wider text-gray-400 mb-3 flex items-center justify-between">
+                                <span>Reservation Receipt Output</span>
+                                <span id="hotel-timestamp" class="text-[10px] text-gray-600 font-mono">No active booking</span>
+                            </h5>
+                            <div id="hotel-receipt" class="bg-gray-950 p-4 rounded-xl border border-gray-900 min-h-[100px] flex items-center justify-center mb-4">
+                                <span class="text-xs text-gray-500 font-mono">Waiting for 
+
+booking command parameters...</span>
+                            </div>
+
+                            <div class="mt-4 p-4 bg-indigo-950/40 border border-indigo-500/20 rounded-2xl">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold text-indigo-300 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i> 
+                                    </span>
+                                    <span class="text-[9px] bg-indigo-500/20 text-indigo-400 font-bold px-2 py-0.5 rounded-full uppercase">Copilot Active</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400 mb-3">Ask  how Adinaan would expand this Hotel Booking simulator with full backend logic or feature updates.</p>
+                                <div class="flex gap-2">
+                                    <button onclick="askCopilot('hotel', 'database')" class="flex-1 py-1.5 px-2 bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/30 text-indigo-200 text-2xs sm:text-xs font-semibold rounded-lg transition text-center">
+                                        SQL Schema
+                                    </button>
+                                    <button onclick="askCopilot('hotel', 'api')" class="flex-1 py-1.5 px-2 bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/30 text-indigo-200 text-2xs sm:text-xs font-semibold rounded-lg transition text-center">
+                                        Draft PHP API
+                                    </button>
+                                    <button onclick="askCopilot('hotel', 'coupon')" class="flex-1 py-1.5 px-2 bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/30 text-indigo-200 text-2xs sm:text-xs font-semibold rounded-lg transition text-center">
+                                        Coupon Math
+                                    </button>
+                                </div>
+                                <div id="copilot-out-hotel" class="hidden mt-3 p-3 bg-gray-950 rounded-xl border border-indigo-950 text-xs font-mono text-gray-300 max-h-[180px] overflow-y-auto whitespace-pre-wrap text-left"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Online Banking System Details & Live Interactive Application -->
+                <div id="proj-banking" class="project-view lg:col-span-12 grid grid-cols-1 lg:grid-cols-12 gap-8 hidden">
+                    <div class="lg:col-span-5 flex flex-col justify-between glass-panel p-6 sm:p-8 rounded-3xl border border-gray-800">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full"><i class="fa-solid fa-wallet mr-1"></i> System Demo 2</span>
+                            <h3 class="text-2xl font-black text-white mt-4">Online Banking System</h3>
+                            <p class="text-sm text-gray-400 mt-2 leading-relaxed">
+                                A simulated secure ledger application capable of processing basic operations including client deposits, balance withdrawals, and electronic money transfers.
+                            </p>
+                            <h4 class="font-bold text-gray-300 mt-6 text-sm">Key System Features Built:</h4>
+                            <ul class="space-y-2 mt-2 text-xs text-gray-400">
+                                <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Active ledger ledger tracking state</li>
+                                <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Security withdrawal validation safeguards</li>
+                                <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Transfer destinations address matching</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 border-t border-gray-800/60 mt-6">
+                            <span class="text-xs text-emerald-300 font-mono">Built with HTML5, CSS3, &amp; Vanilla JavaScript State</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Application Area -->
+                    <div class="lg:col-span-7 bg-brand-darkCard border border-gray-800 
+
+p-6 rounded-3xl flex flex-col justify-between shadow-2xl relative">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
+                                <h4 class="font-bold text-white flex items-center"><i class="fa-solid fa-piggy-bank mr-2 text-emerald-400"></i>Virtual Bank Portal</h4>
+                                <div class="bg-emerald-500/10 text-emerald-400 font-bold px-3 py-1.5 rounded-full text-xs">
+                                    Bal: $<span id="bank-current-balance" class="font-mono">5000</span>.00
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <!-- Deposit block -->
+                                    <div class="p-3 bg-gray-900 border border-gray-800 rounded-xl">
+                                        <label class="block text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">Deposit Amt</label>
+                                        <div class="relative">
+                                            <input type="number" id="banking-deposit-val" placeholder="0.00" class="w-full bg-gray-950 border border-gray-800 text-sm text-white px-2.5 py-2 rounded-lg focus:outline-none focus:border-emerald-500">
+                                        </div>
+                                        <button onclick="bankAction('deposit')" class="w-full mt-2 py-1.5 px-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-xs transition">
+                                            Deposit
+                                        </button>
+                                    </div>
+
+                                    <!-- Withdrawal block -->
+                                    <div class="p-3 bg-gray-900 border border-gray-800 rounded-xl">
+                                        <label class="block text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">Withdraw Amt</label>
+                                        <input type="number" id="banking-withdraw-val" placeholder="0.00" class="w-full bg-gray-950 border border-gray-800 text-sm text-white px-2.5 py-2 rounded-lg focus:outline-none focus:border-emerald-500">
+
+                                        <button onclick="bankAction('withdraw')" class="w-full mt-2 py-1.5 px-2 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-lg text-xs transition">
+                                            Withdraw
+                                        </button>
+                                    </div>
+
+                                    <!-- Transfer block -->
+                                    <div class="p-3 bg-gray-900 border border-gray-800 rounded-xl">
+                                        <label class="block text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">Transfer Amt</label>
+                                        <input type="number" id="banking-transfer-val" placeholder="0.00" class="w-full bg-gray-950 border border-gray-800 text-sm text-white px-2.5 py-2 rounded-lg focus:outline-none focus:border-emerald-500">
+                                        <button onclick="bankAction('transfer')" class="w-full mt-2 py-1.5 px-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg text-xs transition">
+                                            Transfer
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Log output -->
+                        <div class="mt-6 pt-4 border-t border-gray-800">
+                            <h5 class="text-xs font-extrabold uppercase tracking-wider text-gray-400 mb-3 flex items-center justify-between">
+                                <span>Transaction Ledger History</span>
+                                <button onclick="clearLedger()" class="text-[10px] text-gray-500 hover:text-white underline">Clear Logs</button>
+                            </h5>
+                            <div id="bank-ledger" class="bg-gray-950 p-3 rounded-xl border border-gray-900 max-h-[120px] overflow-y-auto space-y-1.5 mb-4 text-left">
+                                <div class="text-[11px] text-gray-400 font-mono">[00:00:00] Account opened successfully with virtual balance $5,000.</div>
+                            </div>
+
+                            <div class="mt-4 p-4 bg-emerald-950/40 border border-
+
+emerald-500/20 rounded-2xl">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold text-emerald-300 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i> Gemini AI Security Safeguards
+                                    </span>
+                                    <span class="text-[9px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded-full uppercase">Copilot Active</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400 mb-3">Ask Gemini how Adinaan would expand this Banking App to include security triggers or cryptographic features.</p>
+                                <div class="flex gap-2">
+                                    <button onclick="askCopilot('banking', 'auth')" class="flex-1 py-1.5 px-2 bg-emerald-600/20 hover:bg-emerald-600/40 border border-emerald-500/30 text-emerald-200 text-2xs sm:text-xs font-semibold rounded-lg transition text-center">
+                                        2FA Token logic
+                                    </button>
+                                    <button onclick="askCopilot('banking', 'audit')" class="flex-1 py-1.5 px-2 bg-emerald-600/20 hover:bg-emerald-600/40 border border-emerald-500/30 text-emerald-200 text-2xs sm:text-xs font-semibold rounded-lg transition text-center">
+                                        Audit Logs DB
+                                    </button>
+                                    <button onclick="askCopilot('banking', 'rate')" class="flex-1 py-1.5 px-2 bg-emerald-600/20 hover:bg-emerald-600/40 border border-emerald-500/30 text-emerald-200 text-2xs sm:text-xs font-semibold rounded-lg transition text-center">
+                                        Rate Limits
+                                    </button>
+                                </div>
+                                <div id="copilot-out-banking" class="hidden mt-3 p-3 bg-gray-950 rounded-xl border border-emerald-950 text-xs font-mono text-gray-300 max-h-[180px] overflow-y-auto whitespace-pre-wrap text-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 3: Employee Management System Details & Live Interactive Application -->
+                <div id="proj-employee" class="project-view lg:col-span-12 grid grid-cols-1 lg:grid-cols-12 gap-8 hidden">
+                    <div class="lg:col-span-5 flex flex-col justify-between glass-panel p-6 sm:p-8 rounded-3xl border border-gray-800">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-pink-400 bg-pink-500/10 px-3 py-1 rounded-full"><i class="fa-solid fa-users mr-1"></i> System Demo 3</span>
+                            <h3 class="text-2xl font-black text-white mt-4">Employee Management System</h3>
+                            <p class="text-sm text-gray-400 mt-2 leading-relaxed">
+                                A company human resource hub constructed to register new employees, assign professional divisions, toggle attendance statistics, and calculate customized payment values.
+                            </p>
+                            <h4 class="font-bold text-gray-300 mt-6 text-sm">Key System Features Built:</h4>
+                            <ul class="space-y-2 mt-2 text-xs text-gray-400">
+                                <li><i class="fa-solid fa-check text-pink-400 mr-2"></i>Interactive list generation database</li>
+                                <li><i class="fa-solid fa-check text-pink-400 mr-2"></i>One-click instant attendance updates</li>
+                                <li><i class="fa-solid fa-check text-pink-400 mr-2"></i>Dynamic salary bonus calculations</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 border-t border-gray-800/60 mt-6">
+                            <span class="text-xs text-pink-300 font-mono">Built with HTML5, CSS3, &amp; Vanilla JavaScript State</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Application Area -->
+                    <div class="lg:col-span-7 bg-brand-darkCard border border-gray-800 p-6 rounded-3xl flex flex-col justify-between shadow-2xl relative">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-
+
+gray-800 pb-4 mb-4">
+                                <h4 class="font-bold text-white flex items-center"><i class="fa-solid fa-users-gear mr-2 text-pink-400"></i>Human Resources Board</h4>
+                                <span class="text-xs font-mono text-gray-400"><span id="emp-count" class="font-bold text-pink-400">3</span> Employees Logged</span>
+                            </div>
+
+                            <!-- Input form for new employee -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-4">
+                                <input type="text" id="emp-name" placeholder="Staff Name" class="bg-gray-900 border border-gray-800 text-xs text-white px-3 py-2 rounded-xl focus:outline-none focus:border-pink-500">
+                                <select id="emp-role" class="bg-gray-900 border border-gray-800 text-xs text-gray-300 px-3 py-2 rounded-xl focus:outline-none focus:border-pink-500">
+                                    <option value="Engineer">Engineer</option>
+                                    <option value="Designer">Designer</option>
+                                    <option value="Analyst">Analyst</option>
+                                </select>
+                                <button onclick="addEmployee()" class="bg-pink-600 hover:bg-pink-700 text-white font-bold text-xs py-2 px-3 rounded-xl transition active:scale-95">
+                                    <i class="fa-solid fa-user-plus mr-1"></i> Register
+                                </button>
+                            </div>
+
+                            <!-- Employee Grid display -->
+                            <div class="space-y-2 max-h-[160px] overflow-y-auto mb-4" id="employees-grid">
+                                <!-- Generated Dynamic Items in Script -->
+                            </div>
+
+                            <div class="mt-4 p-4 bg-pink-950/40 border border-pink-500/20 rounded-2xl">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold text-pink-300 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i> Gemini AI Human Capital Analytics
+                                    </span>
+
+                                    <span class="text-[9px] bg-pink-500/20 text-pink-400 font-bold px-2 py-0.5 rounded-full uppercase">Copilot Active</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400 mb-3">Ask Gemini how Adinaan would expand this Employee Tracker with modern HR analytics or custom reports.</p>
+                                <div class="flex gap-2">
+                                    <button onclick="askCopilot('employee', 'report')" class="flex-1 py-1.5 px-2 bg-pink-600/20 hover:bg-pink-600/40 border border-pink-500/30 text-pink-200 text-2xs sm:text-xs font-semibold rounded-lg transition text-center">
+                                        Payroll Report
+                                    </button>
+                                    <button onclick="askCopilot('employee', 'charts')" class="flex-1 py-1.5 px-2 bg-pink-600/20 hover:bg-pink-600/40 border border-pink-500/30 text-pink-200 text-2xs sm:text-xs font-semibold rounded-lg transition text-center">
+                                        Attendance CSV
+                                    </button>
+                                    <button onclick="askCopilot('employee', 'roles')" class="flex-1 py-1.5 px-2 bg-pink-600/20 hover:bg-pink-600/40 border border-pink-500/30 text-pink-200 text-2xs sm:text-xs font-semibold rounded-lg transition text-center">
+                                        Tax Bracket Math
+                                    </button>
+                                </div>
+                                <div id="copilot-out-employee" class="hidden mt-3 p-3 bg-gray-950 rounded-xl border border-pink-950 text-xs font-mono text-gray-300 max-h-[180px] overflow-y-auto whitespace-pre-wrap text-left"></div>
+                            </div>
+                        </div>
+
+                        <!-- Info/Guide panel -->
+                        <div class="mt-4 pt-4 border-t border-gray-800 text-[11px] text-gray-500 italic">
+                            💡 Register staff, click the Attendance marker to update status, or trigger salary calculation bonuses instantly in the dashboard view.
+                        </div>
+                    </div>
+                </div>
+
+              
+
+                   
+
+                       
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+   
+
+                    
+                        <!-- General Simulator Loader indicator -->
+                        <div id="interview-loader" class="hidden flex items-center justify-center py-2 bg-indigo-950/20 rounded-xl text-xs text-indigo-300">
+                            <i class="fa-solid fa-spinner animate-spin mr-2"></i> Real-time Evaluation is processing...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section (Unified Timeline) -->
+    <section id="experience" class="py-24 bg-brand-darkCard/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm text-indigo-400 font-bold tracking-widest uppercase mb-2">My Education</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Education &amp; Experience</h3>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Education Timeline Column -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-8 flex items-center"><i class="fa-solid fa-school text-indigo-400 mr-2"></i>Education Academic Timeline</h4>
+                    <div class="relative border-l-2 border-indigo-500/20 pl-6 ml-4 space-y-10">
+                        
+                        <!-- Timeline Point 1 -->
+                        <div class="relative">
+                            <div class="absolute -left-[35px] top-1.5 w-4.5 h-4.5 rounded-full bg-indigo-500 border-4 border-brand-darkBg flex items-center justify-center"></div>
+                            <span class="text-xs font-mono font-semibold text-indigo-400">2023 - Present</span>
+                            <h5 class="text-lg font-bold text-white mt-1">B.Sc. Degree in Information Science</h5>
+                            <p class="text-sm font-medium text-gray-400">Jimma University, Jimma Institute of Technology (JiT)</p>
+                            <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                                Curating a curriculum focused on web applications, structured systems analysis, entity modeling relationships, algorithms design, information retrieval paradigms, and software metrics. Currently in my third year preparing for immediate professional placement.
+                            </p>
+                        </div>
+
+                        <!-- Timeline Point 2 -->
+                        <div class="relative">
+                            <div class="absolute -left-[35px] top-1.5 w-4.5 h-4.5 rounded-full bg-gray-600 border-4 border-brand-darkBg flex items-center justify-center"></div>
+                            <span class="text-xs font-mono font-semibold text-gray-500">Primary &amp; Secondary Education</span>
+                            <h5 class="text-lg font-bold text-white mt-1">Preparatory &amp; High School Studies</h5>
+                            <p class="text-sm font-medium text-gray-400">Advanced Stem Stream Program</p>
+                            <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                                Attained superior scores in science, logical computations, and 
+
+algorithmic mathematics foundations, which sparked my passion for Information Science.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Timeline Column -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-8 flex items-center"><i class="fa-solid fa-briefcase text-pink-400 mr-2"></i>Practical Academic Experience</h4>
+                    <div class="relative border-l-2 border-pink-500/20 pl-6 ml-4 space-y-10">
+                        
+                        <!-- Timeline Point 1 -->
+                        <div class="relative">
+                            <div class="absolute -left-[35px] top-1.5 w-4.5 h-4.5 rounded-full bg-pink-500 border-4 border-brand-darkBg flex items-center justify-center"></div>
+                            <span class="text-xs font-mono font-semibold text-pink-400">Active Stage</span>
+                            <h5 class="text-lg font-bold text-white mt-1">Preparing for Internship Program</h5>
+                            <p class="text-sm font-medium text-gray-400">Targeting Information Technology and Software Orgs</p>
+                            <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                                Sharpening technical proficiency with web standards (HTML/CSS/JS/PHP/SQL) and individual visual suites (Photoshop/Graphic Layouts) to contribute to production environments immediately.
+                            </p>
+                        </div>
+
+                        <!-- Timeline Point 2 -->
+                        <div class="relative">
+                            <div class="absolute -left-[35px] top-1.5 w-4.5 h-4.5 rounded-full bg-gray-600 border-4 border-brand-darkBg flex items-center justify-center"></div>
+                            <span class="text-xs font-mono font-semibold text-gray-500">Freelance &amp; Academic</span>
+                            <h5 class="text-lg font-bold text-white mt-1">Creative Freelancer &amp; Systems Builder</h5>
+
+                            <p class="text-sm font-medium text-gray-400">Self-Employed &amp; Student Projects</p>
+                            <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                                Formulated small-scale commercial websites, localized brand structures, custom-edited social video assets, and managed small relational databases for client portfolios.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-indigo-600/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm text-indigo-400 font-bold tracking-widest uppercase mb-2">Social Proof</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Testimonials</h3>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 space-x-1 mb-4">
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                        </div>
+                        <p class="text-sm text-gray-300 italic leading-relaxed">
+
+                            "Adinaan delivered high-quality photoshop templates and a beautiful promotional video edit. His dual talent in software coding and visual design is incredibly rare and highly valuable."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-6 mt-6 border-t border-gray-800/60">
+                        <div class="w-10 h-10 rounded-full bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-xs uppercase">
+                            KC
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-white">Kidus Chala</h5>
+                            <p class="text-[10px] text-gray-500">E-Commerce Merchant Client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 space-x-1 mb-4">
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                        </div>
+                        <p class="text-sm text-gray-300 italic leading-relaxed">
+                            "Working alongside Adinaan on our university database project was exceptional. He mapped out complex SQL entities and schemas efficiently, ensuring our query speeds were optimized."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-6 mt-6 border-t border-gray-800/60">
+                        <div class="w-10 h-10 rounded-full bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold text-xs uppercase">
+
+                            LB
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-white">Lensa Birru</h5>
+                            <p class="text-[10px] text-gray-500">JiT Peer Student Collaborator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 space-x-1 mb-4">
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                        </div>
+                        <p class="text-sm text-gray-300 italic leading-relaxed">
+                            "Adinaan shows an incredible eagerness to learn and exceptional skill retention. His implementation of basic banking structures inside our class exercises showed solid algorithm development."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-6 mt-6 border-t border-gray-800/60">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-xs uppercase">
+                            TA
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-white">Mr. Hambisa A.</h5>
+                            <p class="text-[10px] text-gray-500">Jimma University Instructor</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-brand-darkCard/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm text-indigo-400 font-bold tracking-widest uppercase mb-2">Get in touch</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Connect </h3>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+           
+                       
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Left Sidebar Contact Details -->
+                <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
+                    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-gray-800 space-y-6">
+                        <h4 class="text-xl font-bold text-white">Contact Information</h4>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                            Are you looking to recruit an Information Science intern? Or need custom programming/creative design assets? Contact me through any of the channels below.
+                        </p>
+
+                        <!-- Contact Details List -->
+                        <div class="space-y-4 pt-4">
+                            <a href="https://t.me/Aduyye34" target="_blank" class="flex items-center space-x-4 p-3.5 bg-gray-900 hover:bg-gray-800/60 border border-
+
+gray-800/80 rounded-2xl transition">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg">
+                                    <i class="fa-brands fa-telegram"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Telegram Handle</p>
+                                    <p class="text-sm font-semibold text-white">@Aduye34</p>
+                                </div>
+                            </a>
+
+                            <a href="tel:+251996666347" class="flex items-center space-x-4 p-3.5 bg-gray-900 hover:bg-gray-800/60 border border-gray-800/80 rounded-2xl transition">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Direct Phone</p>
+                                    <p class="text-sm font-semibold text-white">+251996666347</p>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center space-x-4 p-3.5 bg-gray-900 border border-gray-800/80 rounded-2xl">
+                                <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Location</p>
+                                    <p class="text-sm font-semibold text-white">Jimma, Oromia, Ethiopia</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Quick Messenger Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-brand-darkCard border border-gray-800 p-6 sm:p-8 rounded-3xl h-full flex flex-col justify-between shadow-2xl">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-6">Send Direct Messenger Notification</h4>
+                            <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Your Name</label>
+                                        <input type="text" required id="form-name" class="w-full bg-gray-900 border border-gray-800 hover:border-gray-700 text-sm text-white px-4 py-3 rounded-xl focus:outline-none focus:border-indigo-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Your Email</label>
+                                        <input type="email" required id="form-email" class="w-full bg-gray-900 border border-gray-800 hover:border-gray-700 text-sm text-white px-4 py-3 rounded-xl focus:outline-none focus:border-indigo-500">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Message Content</label>
+                                    <textarea required id="form-message" rows="4" class="w-full bg-gray-900 border border-gray-800 hover:border-gray-700 text-sm text-white px-4 py-3 rounded-xl focus:outline-none focus:border-indigo-500" placeholder="Type your project description or internship offer here..."></textarea>
+                                </div>
+                                <button type="submit" class="w-full py-3 px-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold rounded-xl active:scale-95 transition text-sm flex items-center 
+
+justify-center gap-2">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    <span>Send Simulated Message</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links and Footer -->
+    <footer class="bg-brand-darkBg border-t border-gray-900 py-12 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex justify-center items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                    <span class="text-white font-black text-sm">AA</span>
+                </div>
+                <span class="text-lg font-bold text-white tracking-wider">Adinaan Amme</span>
+            </div>
+            
+            <p class="text-xs text-gray-500 uppercase tracking-widest">Connect with me on social media</p>
+            
+            <!-- Social Link Bar -->
+            <div class="flex items-center justify-center space-x-4">
+                <a href="https://t.me/Aduye34" target="_blank" class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-white hover:border-indigo-500 hover:bg-indigo-500/10 flex items-center justify-center transition" title="Telegram">
+                    <i class="fa-brands fa-telegram text-lg"></i>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-white hover:border-indigo-500 hover:bg-indigo-500/10 flex items-center justify-center transition" title="Facebook">
+                    <i class="fa-brands fa-facebook-f text-lg"></i>
+
+                </a>
+                <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-white hover:border-indigo-500 hover:bg-indigo-500/10 flex items-center justify-center transition" title="Instagram">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-white hover:border-indigo-500 hover:bg-indigo-500/10 flex items-center justify-center transition" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                </a>
+            </div>
+
+            <p class="text-xs text-gray-600 pt-4">
+                &copy; 2026 Adinaan Amme. Built dynamically with extreme precision. Jimma Institute of Technology Campus.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating Recruiter AI Agent Chatbot Button -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+        <!-- Floating chat bubble container -->
+        <div id="ai-chat-window" class="hidden w-80 sm:w-96 h-[510px] bg-brand-darkCard/95 border border-indigo-500/30 rounded-3xl shadow-2xl flex-col mb-4 overflow-hidden backdrop-blur-xl transition-all duration-300 transform scale-95 opacity-0 origin-bottom-right">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-indigo-900 to-indigo-800 p-4 border-b border-indigo-500/20 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500 flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-brand-darkCard"></span>
+
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-extrabold text-white">Aduyye-AI Voice</h4>
+                        <p class="text-[10px] text-indigo-200">Adinaan's Smart Portfolio Agent</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <!-- Speaker Toggle for Voice Synthesis -->
+                    <button id="tts-speaker-btn" onclick="toggleTtsSpeaker()" class="p-2 text-indigo-300 hover:text-white hover:bg-indigo-800/50 rounded-xl transition flex items-center gap-1" title="Toggle Voice Response (TTS)">
+                        <i id="tts-speaker-icon" class="fa-solid fa-volume-xmark"></i>
+                        <span id="tts-speaker-status" class="text-[9px] font-bold uppercase hidden sm:inline">Mute</span>
+                    </button>
+                    <button onclick="toggleAiChat()" class="p-2 text-indigo-200 hover:text-white transition">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Voice and Wave Control Bar -->
+            <div class="bg-gray-950 px-4 py-2 border-b border-gray-800 flex items-center justify-between text-[11px] text-gray-400">
+                <div class="flex items-center gap-1">
+                    <label class="text-[10px] uppercase font-bold text-gray-500">Voice:</label>
+                    <select id="tts-voice-select" class="bg-gray-900 text-gray-300 border border-gray-800 rounded px-1.5 py-0.5 focus:outline-none focus:border-indigo-500">
+                        <option value="Zephyr">Zephyr (Bright)</option>
+                        <option value="Puck">Puck (Upbeat)</option>
+                        <option value="Kore" selected>Kore (Firm)</option>
+                        <option value="Fenrir">Fenrir (Excitable)</option>
+                    </select>
+                </div>
+                <div id="tts-soundwave" class="hidden flex items-end gap-0.5 h-6">
+                    <span class="soundwave-bar"></span>
+
+                    <span class="soundwave-bar"></span>
+                    <span class="soundwave-bar"></span>
+                    <span class="soundwave-bar"></span>
+                    <span class="soundwave-bar"></span>
+                </div>
+            </div>
+
+            <!-- Chat messages box -->
+            <div id="ai-messages-container" class="flex-1 p-4 overflow-y-auto space-y-4 text-xs font-sans">
+                <!-- Welcome system message -->
+                <div class="flex items-start space-x-2.5">
+                    <div class="w-7 h-7 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xs flex-shrink-0">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="p-3 bg-indigo-500/10 border border-indigo-500/10 text-gray-300 rounded-2xl rounded-tl-none max-w-[85%] leading-relaxed text-left">
+                        Hi! I am **Aduyye-AI**, Adinaan Amme's smart clone. Toggle the **Speaker Icon** on top to enable high-fidelity AI Voice Synthesizer response! Ask me about his university, projects, or why he is ready for placement!
+                    </div>
+                </div>
+            </div>
+
+           
+
+            
+
+    
+
+    <!-- Application Logic & State Controller Script -->
+    <script>
+        // Toggle Mobile Navigation Menu Drawer
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+
+        });
+
+        // Close mobile nav drawer when any link is clicked
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Beautiful custom toast notification engine
+        function showToast(message, iconClass = 'fa-solid fa-circle-check', duration = 3000) {
+            const toast = document.getElementById('toast-container');
+            const toastText = document.getElementById('toast-text');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastText.textContent = message;
+            toastIcon.innerHTML = `<i class="${iconClass}"></i>`;
+
+            // Transition in
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            // Timeout transition out
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, duration);
+        }
+
+        // Project Switching State mechanism (Includes AI Playground support)
+        function switchProject(projectKey) {
+            // Hide all project blocks
+            document.querySelectorAll('.project-view').forEach(block => {
+                block.classList.add('hidden');
+            });
+
+            // Deactivate all tab keys styling
+            document.getElementById('btn-hotel').className = 'flex-1 min-w-[120px] 
+
+px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-gray-400 hover:text-white';
+            document.getElementById('btn-banking').className = 'flex-1 min-w-[120px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-gray-400 hover:text-white';
+            document.getElementById('btn-employee').className = 'flex-1 min-w-[120px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-gray-400 hover:text-white';
+            document.getElementById('btn-playground').className = 'flex-1 min-w-[120px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-indigo-400 hover:text-white border border-indigo-500/20 hover:border-indigo-500/50 bg-indigo-950/20';
+
+            // Show and activate target
+            if (projectKey === 'hotel') {
+                document.getElementById('proj-hotel').classList.remove('hidden');
+                document.getElementById('btn-hotel').className = 'flex-1 min-w-[120px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-indigo-600 text-white';
+                showToast("Launched Hotel Booking Simulator!", "fa-solid fa-hotel");
+            } else if (projectKey === 'banking') {
+                document.getElementById('proj-banking').classList.remove('hidden');
+                document.getElementById('btn-banking').className = 'flex-1 min-w-[120px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-emerald-600 text-white';
+                showToast("Launched Secure Virtual Bank portal!", "fa-solid fa-wallet");
+            } else if (projectKey === 'employee') {
+                document.getElementById('proj-employee').classList.remove('hidden');
+                document.getElementById('btn-employee').className = 'flex-1 min-w-[120px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-pink-600 text-white';
+                showToast("Launched HR Management dashboard!", "fa-solid fa-users");
+                renderEmployees();
+            } else if (projectKey === 'playground') {
+                document.getElementById('proj-playground').classList.remove('hidden');
+                document.getElementById('btn-playground').className = 'flex-1 min-w-[120px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-indigo-600 text-white border border-indigo-500';
+                showToast("Launched AI Code Refactoring Sandbox!", "fa-solid fa-brain");
+            }
+
+        }
+
+        /* PROJECT 1: HOTEL BOOKING CONTROLLER */
+        function bookHotelRoom() {
+            const roomSelector = document.getElementById('hotel-room-type');
+            const nightsSelector = document.getElementById('hotel-nights');
+            const wifiChecked = document.getElementById('hotel-wifi').checked;
+            const spaChecked = document.getElementById('hotel-spa').checked;
+
+            const roomValParts = roomSelector.value.split(':');
+            const roomName = roomValParts[0];
+            const roomRate = parseFloat(roomValParts[1]);
+            const nightsCount = parseInt(nightsSelector.value);
+
+            // Compute charges
+            const baseCost = roomRate * nightsCount;
+            const wifiCost = wifiChecked ? (10 * nightsCount) : 0;
+            const spaCost = spaChecked ? 45 : 0;
+            const subtotal = baseCost + wifiCost + spaCost;
+            const tax = subtotal * 0.12; // 12% standard tax
+            const total = subtotal + tax;
+
+            // Generate receipt HTML template layout
+            const receiptOutput = `
+                <div class="font-mono text-xs text-left text-gray-300 w-full space-y-1">
+                    <p class="text-indigo-400 font-extrabold border-b border-gray-800 pb-1 uppercase tracking-widest text-[10px]">Room Booking Confirmed</p>
+                    <p><span class="text-gray-500">Suite Style:</span> <span class="text-white font-bold">${roomName}</span></p>
+                    <p><span class="text-gray-500">Stay Duration:</span> ${nightsCount} night(s) x $${roomRate}/night</p>
+                    <p><span class="text-gray-500">Base Cost:</span> $${baseCost.toFixed(2)}</p>
+                    ${wifiChecked ? `<p><span class="text-gray-500">Add-On WiFi:</span> $${wifiCost.toFixed(2)}</p>` : ''}
+                    ${spaChecked ? `<p><span class="text-gray-500">Add-On Premium Spa:</span> $${spaCost.toFixed(2)}</p>` : ''}
+                    <p class="border-t border-gray-800 pt-1"><span class="text-gray-500">VAT (12%):</span> $${tax.toFixed(2)}</p>
+                    <p class="text-sm font-black text-indigo-300"><span class="text-
+
+gray-400 text-xs">Gross Payable:</span> $${total.toFixed(2)}</p>
+                </div>
+            `;
+
+            document.getElementById('hotel-receipt').innerHTML = receiptOutput;
+            
+            // Set current human readable time
+            const now = new Date();
+            document.getElementById('hotel-timestamp').textContent = now.toLocaleTimeString();
+
+            showToast("Successfully reserved! Invoice ready.", "fa-solid fa-receipt");
+        }
+
+        /* PROJECT 2: VIRTUAL BANK CONTROLLER */
+        let bankBalance = 5000.00;
+
+        function bankAction(action) {
+            let valueField;
+            if (action === 'deposit') valueField = document.getElementById('banking-deposit-val');
+            else if (action === 'withdraw') valueField = document.getElementById('banking-withdraw-val');
+            else if (action === 'transfer') valueField = document.getElementById('banking-transfer-val');
+
+            const amount = parseFloat(valueField.value);
+            if (isNaN(amount) || amount <= 0) {
+                showToast("Please input a valid transaction amount!", "fa-solid fa-triangle-exclamation");
+                return;
+            }
+
+            const timestamp = new Date().toLocaleTimeString();
+            const ledger = document.getElementById('bank-ledger');
+
+            if (action === 'deposit') {
+                bankBalance += amount;
+                showToast(`Deposited $${amount.toFixed(2)} successfully!`, "fa-solid fa-circle-arrow-up");
+
+                ledger.innerHTML += `
+                    <div class="text-[11px] text-emerald-400 font-mono">[${timestamp}] DEPOSIT +$${amount.toFixed(2)} | Balance: $${bankBalance.toFixed(2)}</div>
+                `;
+            } else if (action === 'withdraw') {
+                if (amount > bankBalance) {
+                    showToast("Insufficient Balance funds!", "fa-solid fa-circle-xmark");
+                    return;
+                }
+                bankBalance -= amount;
+                showToast(`Withdrew $${amount.toFixed(2)}!`, "fa-solid fa-circle-arrow-down");
+                ledger.innerHTML += `
+                    <div class="text-[11px] text-rose-400 font-mono">[${timestamp}] WITHDRAW -$${amount.toFixed(2)} | Balance: $${bankBalance.toFixed(2)}</div>
+                `;
+            } else if (action === 'transfer') {
+                if (amount > bankBalance) {
+                    showToast("Transfer rejected: Insufficient Balance!", "fa-solid fa-circle-xmark");
+                    return;
+                }
+                bankBalance -= amount;
+                showToast(`Transferred $${amount.toFixed(2)} to @Aduyye34!`, "fa-solid fa-paper-plane");
+                ledger.innerHTML += `
+                    <div class="text-[11px] text-indigo-400 font-mono">[${timestamp}] TRNSFR -$${amount.toFixed(2)} to @Aduyye34 | Balance: $${bankBalance.toFixed(2)}</div>
+                `;
+            }
+
+            // Sync balance visual
+            document.getElementById('bank-current-balance').textContent = bankBalance.toLocaleString();
+            valueField.value = ''; // Clean input
+            ledger.scrollTop = ledger.scrollHeight; // Auto scroll ledger
+        }
+
+        function clearLedger() {
+
+            const timestamp = new Date().toLocaleTimeString();
+            document.getElementById('bank-ledger').innerHTML = `
+                <div class="text-[11px] text-gray-500 font-mono">[${timestamp}] Database log history reset. Balance: $${bankBalance.toFixed(2)}</div>
+            `;
+            showToast("Ledger cleaned!", "fa-solid fa-trash-can");
+        }
+
+        /* PROJECT 3: EMPLOYEE MANAGEMENT CONTROLLER */
+        // Standard initial mock database list
+        let employees = [
+            { id: 1, name: "Sintayehu Kebede", role: "Engineer", attendance: 92, salary: 18500 },
+            { id: 2, name: "Chala Olani", role: "Designer", attendance: 88, salary: 14200 },
+            { id: 3, name: "Elena Mengistu", role: "Analyst", attendance: 96, salary: 15600 }
+        ];
+
+        function renderEmployees() {
+            const grid = document.getElementById('employees-grid');
+            grid.innerHTML = ''; // wipe
+
+            employees.forEach(emp => {
+                const item = document.createElement('div');
+                item.className = 'flex items-center justify-between p-3.5 bg-gray-900 border border-gray-800 rounded-xl hover:border-gray-700 transition duration-300';
+                item.innerHTML = `
+                    <div class="flex items-center space-x-3 text-left">
+                        <div class="w-8 h-8 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center font-black text-xs">
+                            ${emp.name.charAt(0)}
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-white">${emp.name}</h5>
+                            <span class="text-[9px] uppercase tracking-wider text-gray-500 font-bold">${emp.role}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="text-right">
+
+                            <p class="text-[9px] text-gray-500 font-mono">Month Base Pay</p>
+                            <p class="text-xs font-bold text-gray-300 font-mono">ETB ${emp.salary.toLocaleString()}</p>
+                        </div>
+                        <button onclick="toggleAttendance(${emp.id})" class="text-[10px] px-2.5 py-1 rounded-full font-bold ${emp.attendance >= 90 ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-400'}">
+                            Pres: ${emp.attendance}%
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(item);
+            });
+
+            document.getElementById('emp-count').textContent = employees.length;
+        }
+
+        function addEmployee() {
+            const nameField = document.getElementById('emp-name');
+            const roleField = document.getElementById('emp-role');
+
+            if (!nameField.value.trim()) {
+                showToast("Please type a valid employee name!", "fa-solid fa-triangle-exclamation");
+                return;
+            }
+
+            // Assign standard salary values based on positions
+            let basePay = 14000;
+            if (roleField.value === 'Engineer') basePay = 18000;
+            else if (roleField.value === 'Analyst') basePay = 16000;
+
+            const newEmployee = {
+                id: Date.now(),
+                name: nameField.value.trim(),
+                role: roleField.value,
+                attendance: 100, // Starts fresh with perfect attendance
+                salary: basePay
+            };
+
+
+            employees.unshift(newEmployee); // Push to first position
+            renderEmployees();
+            showToast(`${newEmployee.name} registered successfully!`, "fa-solid fa-user-check");
+
+            nameField.value = ''; // Clean input
+        }
+
+        function toggleAttendance(id) {
+            const target = employees.find(emp => emp.id === id);
+            if (target) {
+                // cycle or reduce
+                if (target.attendance === 100) target.attendance = 80;
+                else if (target.attendance === 80) target.attendance = 90;
+                else if (target.attendance === 90) target.attendance = 95;
+                else target.attendance = 100;
+
+                renderEmployees();
+                showToast(`Updated attendance status for ${target.name}`, "fa-solid fa-clipboard-user");
+            }
+        }
+
+        // Contact Form Processing simulated handler
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const msg = document.getElementById('form-message').value;
+
+            showToast(`Thank you ${name}! Your simulated message has been successfully logged.`, "fa-solid fa-paper-plane", 4000);
+            
+            // Clean contact values
+            document.getElementById('contact-form').reset();
+        }
+
+        // Unified Gemini Core API post handler
+        async function fetchGeminiText(userPrompt, systemPrompt) {
+
+            const apiKey = ""; // Left blank so the Canvas runtime automatically provides the API Key.
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userPrompt }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                }
+            };
+
+            let currentDelay = 1000;
+            const maxAttempts = 3;
+
+            for (let attempt = 0; attempt < maxAttempts; attempt++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        if (response.status === 429) {
+                            // Backoff delay on throttling
+                            await new Promise(res => setTimeout(res, currentDelay));
+                            currentDelay *= 2;
+                            continue;
+                        }
+                        throw new Error(`API Error Status: ${response.status}`);
+                    }
+
+                    const json = await response.json();
+                    const outputText = json?.candidates?.[0]?.content?.parts?.[0]?.text;
+                    if (outputText) {
+                        return outputText;
+                    }
+                    throw new Error("Missing text property inside candidate data structure.");
+
+                } catch (err) {
+                    if (attempt === maxAttempts - 1) {
+                        throw err;
+                    }
+                    await new Promise(res => setTimeout(res, currentDelay));
+                    currentDelay *= 2;
+                }
+            }
+        }
+
+        /* FEATURE: AI CODE REVIEW PLAYGROUND */
+        const playgroundCodeSamples = {
+            sql: `-- Dangerous or slow SQL query
+SELECT * FROM Bookings, Customers, Invoices 
+WHERE Bookings.customer_id = Customers.id 
+AND Invoices.booking_id = Bookings.id 
+ORDER BY Invoices.invoice_date DESC;`,
+
+            js: `// Unoptimized JS room rate calculations
+function checkPrice(nights, roomType, promo) {
+    var rate = 100;
+    if (roomType == "Suite") {
+        rate = 200;
+    }
+    var total = rate * nights;
+    if (promo == "SAVE50") {
+        total = total / 2;
+    }
+    return total;
+}`,
+
+            cpp: `// C++ loop calculating average employee payroll expenses (unoptimized)
+#include <iostream>
+#include <vector>
+using namespace std;
+double getAveragePay(vector<double> pay) {
+    double total = 0;
+    for(int i = 0; i < pay.size(); i++) {
+        total += pay[i];
+
+    }
+    return total / pay.size();
+}`
+        };
+
+        function loadPlaygroundSample(lang) {
+            const code = playgroundCodeSamples[lang];
+            if (code) {
+                document.getElementById('playground-code-input').value = code;
+                showToast(`Loaded Sample ${lang.toUpperCase()} structure!`, "fa-solid fa-file-code");
+            }
+        }
+
+        async function runCodePlaygroundReview() {
+            const codeVal = document.getElementById('playground-code-input').value.trim();
+            const goal = document.getElementById('playground-goal').value;
+            const loader = document.getElementById('playground-loader');
+            const output = document.getElementById('playground-output');
+
+            if (!codeVal) {
+                showToast("Please paste or type a code snippet first!", "fa-solid fa-triangle-exclamation");
+                return;
+            }
+
+            loader.classList.remove('hidden');
+            output.textContent = "Synthesizing feedback model outputs...";
+
+            const sysPrompt = `You are the "JiT Senior Technical Architect", an expert code compiler and software security auditor reviewing coding guidelines inside Adinaan Amme's portfolio.
+Perform a review on the user's code snippet based on the selected goal: "${goal}".
+Provide the complete, optimized, refactored version of the code inside a clean, well-commented block.
+Add a brief 3-sentence "Auditor's Assessment Report" explaining exactly why this new refactored version is superior, how it mitigates vulnerabilities or increases speed, and how Adinaan implements these strict optimization principles in Jimma University. Use plain concise wording.`;
+
+
+            try {
+                const response = await fetchGeminiText(codeVal, sysPrompt);
+                output.textContent = response;
+            } catch (err) {
+                output.textContent = "Error communicating with code synthesizer framework. Please check connectivity.";
+            } finally {
+                loader.classList.add('hidden');
+            }
+        }
+
+        /* FEATURE: AI RECRUITER CUSTOM COVER LETTER GENERATOR */
+        let generatedPitchLetter = "";
+
+        async function generateCustomAiPitch() {
+            const company = document.getElementById('pitch-company').value.trim();
+            const role = document.getElementById('pitch-role').value.trim();
+            const tone = document.getElementById('pitch-tone').value;
+            const loader = document.getElementById('pitch-loader');
+            const resultBox = document.getElementById('pitch-result-box');
+            const output = document.getElementById('pitch-output');
+
+            if (!company || !role) {
+                showToast("Please provide both Company and Target Role fields!", "fa-solid fa-triangle-exclamation");
+                return;
+            }
+
+            loader.classList.remove('hidden');
+            resultBox.classList.add('hidden');
+
+            const query = `Write a highly customized professional introduction/cover letter proposal from Adinaan Amme (nickname: Aduyye) to ${company} for the position of ${role}.`;
+
+            const sysPrompt = `You are "Adinaan's Professional Career Agent", a world-class talent representative.
+Generate a structured, persuasive 180-word pitch letter targeted at ${company} for a ${role} position.
+
+Make it focus heavily on his background: B.Sc. student at Jimma University, Jimma Institute of Technology Campus (Information Science), and his dual software-coding (HTML/JS/Python/SQL) and creative-multimedia (Premiere, CapCut, Photoshop) skillsets.
+Use a tone which is: "${tone}". Include his direct call-to-action (Telegram handle: @Aduyye34, Phone: +251996666347, Email placeholder). Keep the language direct, inspiring, and ready to contribute to real projects as an intern immediately. Do not include markdown bold triggers that complicate copy-pasting.`;
+
+            try {
+                const responseText = await fetchGeminiText(query, sysPrompt);
+                generatedPitchLetter = responseText;
+                output.textContent = responseText;
+                resultBox.classList.remove('hidden');
+                showToast(`Cover letter customized for ${company}!`, "fa-solid fa-feather-pointed");
+            } catch (err) {
+                showToast("Failed to compile pitch proposal letter.", "fa-solid fa-circle-exclamation");
+            } finally {
+                loader.classList.add('hidden');
+            }
+        }
+
+        function copyPitchLetterToClipboard() {
+            if (!generatedPitchLetter) return;
+            
+            // Create a temporary textarea for executing document.execCommand copy support
+            const textarea = document.createElement('textarea');
+            textarea.value = generatedPitchLetter;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            showToast("Cover letter copied to clipboard!", "fa-solid fa-clipboard-check");
+        }
+
+        /* FEATURE: REAL-TIME NATIVE GEMINI SPEECH SYNTHESIS (TTS) */
+
+        let isTtsSpeakerEnabled = false;
+        let activeAudioNode = null;
+
+        function toggleTtsSpeaker() {
+            isTtsSpeakerEnabled = !isTtsSpeakerEnabled;
+            const btn = document.getElementById('tts-speaker-btn');
+            const icon = document.getElementById('tts-speaker-icon');
+            const status = document.getElementById('tts-speaker-status');
+
+            if (isTtsSpeakerEnabled) {
+                btn.className = 'p-2 text-emerald-400 bg-emerald-950/40 hover:bg-emerald-800/50 rounded-xl border border-emerald-500/30 transition flex items-center gap-1';
+                icon.className = 'fa-solid fa-volume-high animate-bounce';
+                status.textContent = "Speech ON";
+                showToast("Voice Synthesis enabled! Aduyye will speak now.", "fa-solid fa-volume-high");
+            } else {
+                btn.className = 'p-2 text-indigo-300 hover:text-white hover:bg-indigo-800/50 rounded-xl transition flex items-center gap-1';
+                icon.className = 'fa-solid fa-volume-xmark';
+                status.textContent = "Mute";
+                showToast("Voice synthesis muted.", "fa-solid fa-volume-xmark");
+                silenceActiveAudio();
+            }
+        }
+
+        function silenceActiveAudio() {
+            if (activeAudioNode) {
+                activeAudioNode.pause();
+                activeAudioNode = null;
+            }
+            document.getElementById('tts-soundwave').classList.add('hidden');
+        }
+
+        // Helper: Convert base64 format string to an array buffer
+        function base64ToArrayBuffer(base64) {
+            const binaryString = window.atob(base64);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes.buffer;
+        }
+
+        // Helper: Build a standard 16-bit linear WAV header container for audio playback
+        function pcmToWav(pcmData, sampleRate) {
+            const buffer = new ArrayBuffer(44 + pcmData.byteLength);
+            const view = new DataView(buffer);
+
+            // Write chunk header descriptors
+            writeString(view, 0, 'RIFF');
+            view.setUint32(4, 36 + pcmData.byteLength, true);
+            writeString(view, 8, 'WAVE');
+            
+            // Format descriptor block
+            writeString(view, 12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true); // Linear PCM modulation = 1
+            view.setUint16(22, 1, true); // Mono = 1 channel
+            view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * 2, true); // Byte speed (rate * align)
+            view.setUint16(32, 2, true); // Align (channel * bytes)
+            view.setUint16(34, 16, true); // 16 bits resolution
+            
+            // Audio binary payload sub-chunk
+            writeString(view, 36, 'data');
+            view.setUint32(40, pcmData.byteLength, true);
+
+            // Copy the raw PCM samples
+            const pcmBytes = new Uint8Array(pcmData);
+            const wavBytes = new Uint8Array(buffer, 44);
+            wavBytes.set(pcmBytes);
+
+            return new Blob([buffer], { type: 'audio/wav' });
+        }
+
+        function writeString(view, offset, string) {
+
+            for (let i = 0; i < string.length; i++) {
+                view.setUint8(offset + i, string.charCodeAt(i));
+            }
+        }
+
+        // Core Voice Synthesis Request (using gemini-2.5-flash-preview-tts)
+        async function playVoiceSynthesis(spokenText) {
+            if (!isTtsSpeakerEnabled) return;
+            silenceActiveAudio();
+
+            const selectedVoice = document.getElementById('tts-voice-select').value;
+            const apiKey = ""; // Leave blank so the Canvas runtime automatically provides the API Key.
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{
+                    parts: [{ text: `Say clearly and professionally: ${spokenText}` }]
+                }],
+                generationConfig: {
+                    responseModalities: ["AUDIO"],
+                    speechConfig: {
+                        voiceConfig: {
+                            prebuiltVoiceConfig: { voiceName: selectedVoice }
+                        }
+                    }
+                }
+            };
+
+            const soundwave = document.getElementById('tts-soundwave');
+            soundwave.classList.remove('hidden');
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error("TTS Generation failed.");
+
+                const result = await response.json();
+                const part = result?.candidates?.[0]?.content?.parts?.[0];
+                const audioData = part?.inlineData?.data;
+                const mimeType = part?.inlineData?.mimeType;
+
+                if (audioData && mimeType && mimeType.startsWith("audio/")) {
+                    const sampleRate = parseInt(mimeType.match(/rate=(\d+)/)?.[1] || "24000", 10);
+                    const pcmData = base64ToArrayBuffer(audioData);
+                    const wavBlob = pcmToWav(pcmData, sampleRate);
+                    const audioUrl = URL.createObjectURL(wavBlob);
+
+                    // Create new native browser Audio element
+                    const audioObj = new Audio(audioUrl);
+                    activeAudioNode = audioObj;
+                    
+                    audioObj.addEventListener('ended', () => {
+                        soundwave.classList.add('hidden');
+                    });
+                    
+                    await audioObj.play();
+                } else {
+                    soundwave.classList.add('hidden');
+                }
+            } catch (err) {
+                console.error("Gemini TTS Error: ", err);
+                soundwave.classList.add('hidden');
+            }
+        }
+
+        async function askCopilot(project, category) {
+            const outputBox = document.getElementById(`copilot-out-${project}`);
+            outputBox.classList.remove('hidden');
+            outputBox.innerHTML = `<div class="flex items-center space-x-2"><i class="fa-solid fa-spinner animate-spin"></i> <span>Gemini is compiling your code request...</span></div>`;
+
+            let query = "";
+
+            let context = "";
+
+            if (project === 'hotel') {
+                context = "Hotel Booking Simulator with select room classes, nights lengths, wifi/spa checkboxes, and 12% tax calculations.";
+                if (category === 'database') query = "Draft an elegant PostgreSQL relational database schema with tables for room styles, active customer bookings, and invoices.";
+                else if (category === 'api') query = "Create a clean draft of a PHP endpoint API script that receives POST request booking fields and stores them safely with PDO.";
+                else if (category === 'coupon') query = "Draft a clean JavaScript logic expansion showing how to integrate promo coupon codes (e.g. 'JIT20' for 20% off) into our reservation math.";
+            } else if (project === 'banking') {
+                context = "Online Banking System processing deposits, balance transfers, and withdrawals.";
+                if (category === 'auth') query = "Explain and write clean JavaScript pseudocode implementing a temporary 2FA token generator check during withdrawal attempts.";
+                else if (category === 'audit') query = "Provide a MySQL table schema and query system mapping out audit ledgers to log user IP, action type, amount, and timestamp.";
+                else if (category === 'rate') query = "Draft client-side rate limit logic preventing transaction requests if the click rate exceeds 5 requests per minute.";
+            } else if (project === 'employee') {
+                context = "Employee Management Tracker capturing registration name, position, monthly salary, and current active attendance status.";
+                if (category === 'report') query = "Draft a Node.js script compiling dynamic salary expense stats (sum, average, highest earner) from an input array of employee models.";
+                else if (category === 'charts') query = "Create a clean CSV formatted export helper function in JavaScript that loops over employee list arrays and produces a raw CSV file.";
+                else if (category === 'roles') query = "Suggest clean formulas or tax deduction logic to calculate Ethiopian ETB gross to net pay slabs dynamically inside the employee listings.";
+            }
+
+            const sysPrompt = `You are the "JiT Project Architect", an expert software 
+
+advisor built into Adinaan Amme's portfolio.
+You are helping a recruiter evaluate Adinaan's technology capabilities based on his project concept: "${context}".
+Provide an structured response for the prompt: "${query}".
+Keep answers concise (max 150 words), include short well-commented code snippets, and maintain a highly professional tone. Do not use complex formatting that breaks simple terminal displays. Highlight how Adinaan could easily implement this.`;
+
+            try {
+                const responseText = await fetchGeminiText(query, sysPrompt);
+                outputBox.textContent = responseText;
+            } catch (err) {
+                outputBox.innerHTML = `<span class="text-rose-400 font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Copilot Error. Please double-check network connection.</span>`;
+            }
+        }
+
+        const aiChatWindow = document.getElementById('ai-chat-window');
+        const aiChatInput = document.getElementById('ai-chat-input');
+        const aiMessagesContainer = document.getElementById('ai-messages-container');
+
+        const portfolioDossier = `You are "Aduyye-AI", the advanced virtual agent and clone of Adinaan Amme (nickname: Aduyye).
+Your job is to answer recruiter queries about Adinaan in a warm, professional, and convincing manner to get him an internship.
+Here are the official facts about Adinaan:
+- Name: Adinaan Amme (Aduyye)
+- University: Jimma University, Jimma Institute of Technology (JiT) Campus. 3rd-year student.
+- Major: B.Sc. in Information Science.
+- Target: Looking for a software engineering, full-stack web dev, or database administrator internship program. Ready to start immediately!
+- Tech Skills: HTML, CSS, JavaScript, Python, C++, C#, PHP, Database relational SQL systems.
+- Creative Portfolio Skills: Professional video editing (Premiere, CapCut, Motion graphics), Graphic design templates (branding assets), Photoshop (UI high-fidelity compositions).
+
+- Projects Built:
+  1. Hotel Booking System: Select stay packages, options, and auto-calculate invoice taxes.
+  2. Online Banking Portal: Live interactive deposits, transfers, and withdrawal ledger simulator.
+  3. Employee Management System: Staff signup, payroll calculator, and live attendance metrics.
+- Contacts:
+  * Telegram handle: @Aduyye34 (Link: https://t.me/Aduye34)
+  * Phone number: +251996666347
+  * Location: Harar, Oromia, Ethiopia
+- Guidelines: Keep answers concise, legible (use bullets), encouraging, and extremely confident. Ethiopians and foreigners alike are reading this. Direct them to contact Adinaan directly on Telegram (@Aduyye34) or call him on +251996666347.`;
+
+        function toggleAiChat() {
+            if (aiChatWindow.classList.contains('hidden')) {
+                aiChatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    aiChatWindow.classList.remove('scale-95', 'opacity-0');
+                    aiChatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                aiChatWindow.classList.add('scale-95', 'opacity-0');
+                aiChatWindow.classList.remove('scale-100', 'opacity-100');
+                setTimeout(() => {
+                    aiChatWindow.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function handleChatKey(event) {
+            if (event.key === 'Enter') {
+                sendUserMessage();
+            }
+        }
+
+        function suggestQuery(text) {
+            aiChatInput.value = text;
+
+            sendUserMessage();
+        }
+
+        async function sendUserMessage() {
+            const queryText = aiChatInput.value.trim();
+            if (!queryText) return;
+
+            // Clear input box
+            aiChatInput.value = "";
+
+            // Render User Message UI
+            const userMsgElement = document.createElement('div');
+            userMsgElement.className = "flex items-start justify-end space-x-2.5";
+            userMsgElement.innerHTML = `
+                <div class="p-3 bg-indigo-600 text-white rounded-2xl rounded-tr-none max-w-[85%] leading-relaxed text-left">
+                    ${queryText}
+                </div>
+            `;
+            aiMessagesContainer.appendChild(userMsgElement);
+            aiMessagesContainer.scrollTop = aiMessagesContainer.scrollHeight;
+
+            // Render Loader / Typing Animation UI
+            const loaderElement = document.createElement('div');
+            loaderElement.id = "ai-typing-loader";
+            loaderElement.className = "flex items-start space-x-2.5";
+            loaderElement.innerHTML = `
+                <div class="w-7 h-7 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xs flex-shrink-0">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="p-3 bg-indigo-500/10 border border-indigo-500/10 text-gray-300 rounded-2xl rounded-tl-none max-w-[85%] flex items-center space-x-1">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                </div>
+            `;
+            aiMessagesContainer.appendChild(loaderElement);
+            aiMessagesContainer.scrollTop = aiMessagesContainer.scrollHeight;
+
+
+            try {
+                const response = await fetchGeminiText(queryText, portfolioDossier);
+                
+                // Remove typing indicator loader
+                loaderElement.remove();
+
+                // Format simple text to readable paragraphs and bullets
+                let formattedText = response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                formattedText = formattedText.replace(/\n\* (.*?)/g, '<br>• $1');
+                formattedText = formattedText.replace(/\n/g, '<br>');
+
+                // Render Agent Response
+                const agentMsgElement = document.createElement('div');
+                agentMsgElement.className = "flex items-start space-x-2.5 animate-fadeIn";
+                agentMsgElement.innerHTML = `
+                    <div class="w-7 h-7 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xs flex-shrink-0">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="p-3 bg-indigo-500/10 border border-indigo-500/10 text-gray-300 rounded-2xl rounded-tl-none max-w-[85%] leading-relaxed text-left">
+                        ${formattedText}
+                    </div>
+                `;
+                aiMessagesContainer.appendChild(agentMsgElement);
+                aiMessagesContainer.scrollTop = aiMessagesContainer.scrollHeight;
+
+                // Perform voice synthesis of agent response if enabled
+                // Remove formatting tags for cleaner speech pronunciation
+                const cleanSpeechText = response.replace(/[\*\#\`]/g, '');
+                playVoiceSynthesis(cleanSpeechText);
+
+            } catch (err) {
+                loaderElement.remove();
+                const errorMsgElement = document.createElement('div');
+                errorMsgElement.className = "flex items-start space-x-2.5";
+                errorMsgElement.innerHTML = `
+
+                    <div class="w-7 h-7 rounded-lg bg-indigo-500/10 text-rose-400 flex items-center justify-center text-xs flex-shrink-0">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <div class="p-3 bg-rose-500/10 border border-rose-500/20 text-rose-300 rounded-2xl rounded-tl-none max-w-[85%] leading-relaxed text-left">
+                        Oops, I had trouble contacting my neural network. Please try asking again in a moment!
+                    </div>
+                `;
+                aiMessagesContainer.appendChild(errorMsgElement);
+                aiMessagesContainer.scrollTop = aiMessagesContainer.scrollHeight;
+            }
+        }
+
+        // Initial launch configuration on load
+        window.onload = function() {
+            renderEmployees();
+        }
+
+        /* FEATURE: AI DESIGN CONCEPT PROTOTYPER (using imagen-4.0-generate-001) */
+        async function generateAiDesign() {
+            const promptVal = document.getElementById('design-prompt').value.trim();
+            const loader = document.getElementById('design-loader');
+            const resultImg = document.getElementById('design-result-img');
+            const placeholder = document.getElementById('design-placeholder');
+
+            if (!promptVal) {
+                showToast("Please enter a design prompt!", "fa-solid fa-triangle-exclamation");
+                return;
+            }
+
+            loader.classList.remove('hidden');
+            placeholder.classList.add('hidden');
+            resultImg.classList.add('hidden');
+
+            const apiKey = ""; // Leave blank so Canvas runtime automatically provides the API Key.
+
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`;
+
+            const payload = {
+                instances: { prompt: `Modern layout for: ${promptVal}, beautiful visual web or mobile design concept, crisp graphics UI interface` },
+                parameters: { "sampleCount": 1 }
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                    const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                    resultImg.src = imageUrl;
+                    resultImg.classList.remove('hidden');
+                    showToast("AI Prototyper successfully rendered design!", "fa-solid fa-wand-magic-sparkles");
+                } else {
+                    throw new Error("Missing predictions payload in response data.");
+                }
+            } catch (err) {
+                console.error(err);
+                placeholder.classList.remove('hidden');
+                placeholder.innerHTML = `<span class="text-rose-400 font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Render Error. Try modifying prompt metrics.</span>`;
+            } finally {
+                loader.classList.add('hidden');
+            }
+        }
+
+        /* FEATURE: INTERACTIVE MOCK INTERVIEW SIMULATOR (using gemini-3-flash-preview) */
+
+        let interviewState = {
+            active: false,
+            role: "",
+            questionNum: 1,
+            currentQuestion: "",
+            history: [],
+            scores: []
+        };
+
+        async function startMockInterview() {
+            const role = document.getElementById('interview-role').value;
+            const screenStart = document.getElementById('interview-start-screen');
+            const screenActive = document.getElementById('interview-active-screen');
+            const statusText = document.getElementById('interview-status');
+
+            interviewState = {
+                active: true,
+                role: role,
+                questionNum: 1,
+                currentQuestion: "",
+                history: [],
+                scores: []
+            };
+
+            screenStart.classList.add('hidden');
+            screenActive.classList.remove('hidden');
+            statusText.textContent = `Question 1 of 3`;
+
+            await fetchNextInterviewQuestion();
+        }
+
+        async function fetchNextInterviewQuestion() {
+            const loader = document.getElementById('interview-loader');
+            const questionText = document.getElementById('interview-question-text');
+            loader.classList.remove('hidden');
+            questionText.textContent = "Compiling realistic interview question...";
+
+            const prompt = `Formulate an realistic, direct and challenging technical question related to the job role: "${interviewState.role}". 
+This is Question #${interviewState.questionNum} of 3. Ask about design 
+
+practices, coding issues, or relational normalization issues.
+Be concise (max 2 sentences). Avoid introductory filler (do not say "Sure, here's question 1:").`;
+
+            const sysInstruction = `You are an expert technical interviewer assessing a junior applicant. Ask precise, direct questions.`;
+
+            try {
+                const response = await fetchGeminiText(prompt, sysInstruction);
+                interviewState.currentQuestion = response;
+                questionText.textContent = response;
+            } catch (err) {
+                questionText.textContent = "Failure communicating with interviewer neural engine. Please click retry.";
+            } finally {
+                loader.classList.add('hidden');
+            }
+        }
+
+        async function submitInterviewAnswer() {
+            const answerInput = document.getElementById('interview-answer');
+            const answerVal = answerInput.value.trim();
+            const loader = document.getElementById('interview-loader');
+
+            if (!answerVal) {
+                showToast("Please write some text to submit your answer!", "fa-solid fa-triangle-exclamation");
+                return;
+            }
+
+            loader.classList.remove('hidden');
+
+            const evaluationPrompt = `Evaluate this mock answer:
+Role: ${interviewState.role}
+Question: ${interviewState.currentQuestion}
+Answer: ${answerVal}
+
+Return your response ONLY as a JSON object inside valid formatting:
+{
+  "score": number (from 0 to 100 representing response accuracy and technical 
+
+depth),
+  "feedback": "Two sentences highlighting strengths and explaining what important details were missing"
+}`;
+
+            const sysInstruction = `You are a high-level technical evaluator. You must return ONLY raw JSON matching the requested structure. No markdown wrappers.`;
+
+            try {
+                const responseText = await fetchGeminiText(evaluationPrompt, sysInstruction);
+                // Clean potential wrapper blocks
+                let cleanJson = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
+                const result = JSON.parse(cleanJson);
+
+                interviewState.scores.push(result.score);
+                interviewState.history.push({
+                    q: interviewState.currentQuestion,
+                    a: answerVal,
+                    score: result.score,
+                    feedback: result.feedback
+                });
+
+                answerInput.value = ""; // reset field
+
+                if (interviewState.questionNum < 3) {
+                    interviewState.questionNum++;
+                    document.getElementById('interview-status').textContent = `Question ${interviewState.questionNum} of 3`;
+                    await fetchNextInterviewQuestion();
+                } else {
+                    renderInterviewReportCard();
+                }
+            } catch (err) {
+                console.error(err);
+                showToast("Error processing assessment response.", "fa-solid fa-circle-exclamation");
+            } finally {
+                loader.classList.add('hidden');
+
+            }
+        }
+
+        function renderInterviewReportCard() {
+            document.getElementById('interview-active-screen').classList.add('hidden');
+            document.getElementById('interview-status').textContent = "Completed";
+
+            const reportScreen = document.getElementById('interview-report-screen');
+            reportScreen.classList.remove('hidden');
+
+            const avgScore = Math.round(interviewState.scores.reduce((a, b) => a + b, 0) / interviewState.scores.length);
+            document.getElementById('interview-final-score').textContent = `${avgScore}/100`;
+
+            const reviewContainer = document.getElementById('interview-review-details');
+            reviewContainer.innerHTML = "";
+
+            interviewState.history.forEach((item, idx) => {
+                const qBlock = document.createElement('div');
+                qBlock.className = "p-3.5 bg-gray-900 border border-gray-800 rounded-xl space-y-1.5";
+                qBlock.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-[9px] font-extrabold text-indigo-400 uppercase">Question ${idx + 1}</span>
+                        <span class="text-[9px] font-bold ${item.score >= 70 ? 'text-emerald-400 bg-emerald-500/10' : 'text-rose-400 bg-rose-500/10'} px-2 py-0.5 rounded-full">Score: ${item.score}%</span>
+                    </div>
+                    <p class="text-xs text-white italic font-medium leading-relaxed">"${item.q}"</p>
+                    <p class="text-[11px] text-gray-400 leading-relaxed bg-gray-950 p-2.5 rounded-lg border border-gray-800/60">${item.feedback}</p>
+                `;
+                reviewContainer.appendChild(qBlock);
+            });
+        }
+
+        function resetMockInterview() {
+            document.getElementById('interview-report-screen').classList.add('hidden');
+            document.getElementById('interview-start-screen').classList.remove('hidden');
+            document.getElementById('interview-status').textContent = "Ready to Test";
+        }
+    </script>
+</body>
+</html>
